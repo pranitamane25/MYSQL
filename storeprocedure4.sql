@@ -29,3 +29,8 @@ ELSE
 END IF ;
 END ;
 DELIMITER ;
+
+
+-- Call the stored procedure with test parameters
+SELECT * FROM discount_codes WHERE code = 'INDEPENDENCE23';
+CALL ApplyDiscount(1, 'INDEPENDENCE23');
