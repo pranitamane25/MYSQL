@@ -14,7 +14,7 @@ DELIMITER ;
 
 desc reviews;
 
-CALL ProductReview(1, 2, 5, 'Great product!');
+CALL ProductReview(1, 2, 5, 'I love this product');
 
 select * from reviews;
 drop procedure ProductReview;

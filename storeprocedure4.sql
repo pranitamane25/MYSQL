@@ -11,8 +11,8 @@ DECLARE total decimal(10,2);
 
 -- Retrieve discount percentage from the discount_codes table
 
-select discount_percentage INTO discount FROM discount_code WHERE code=p_discount_code and NOW() BETWEEN start_date and end_date;
-
+select discount_percentage INTO discount FROM discount_codes WHERE code=p_discount_code and NOW() BETWEEN start_date and end_date;
+	
  -- If discount exists, apply it
  IF discount IS NOT NULL then
 select total_amount INTO total FROM orders WHERE id=p_order_id;
@@ -33,4 +33,4 @@ DELIMITER ;
 
 -- Call the stored procedure with test parameters
 SELECT * FROM discount_codes WHERE code = 'INDEPENDENCE23';
-CALL ApplyDiscount(1, 'INDEPENDENCE23');
+CALL ApplyDiscount(2, 'INDEPENDENCE23');
